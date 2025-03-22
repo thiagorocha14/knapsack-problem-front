@@ -1,17 +1,31 @@
 <template>
     <main>
-        <div class="flex items-center justify-center h-full w-full">
-            <div class="h-4/5 w-4/5 rounded-xl border border-solid p-5 bg-white/25 border-black/50 text-black dark:bg-black/50 dark:border-white/75 dark:text-white">
-                <h1 class="text-4xl font-bold">Home Page</h1>
-                <p class="text-xl">This is the home page</p>
+        <div class="flex items-center justify-end h-[120vh]">
+            <div class="text-white">
+                <h1 ref="title" class="text-8xl fixed right-24 top-[calc(45%-6rem)] font-bold drop-shadow-lg text-right">Knapsack <br>Problem</h1>
             </div>
         </div>
     </main>
 </template>
-<script lang="ts">
-export default {
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from "vue";
 
+const title = ref(null) as any;
+
+const handleScroll = () => {
+    const scrollValue = window.scrollY;
+    const right = 96 + (scrollValue * -0.9);
+
+    title.value.style.right = `${right}px`;
 }
+
+onMounted(() => {
+    window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll);
+});
 </script>
 <style lang="">
 
