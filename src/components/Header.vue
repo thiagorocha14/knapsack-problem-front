@@ -8,13 +8,13 @@
             </span>
         </div>
         <nav class="flex flex-nowrap p-2 font-semibold">
-            <div class="h-full px-3 py-1 my-2 hover:cursor-pointer hover:bg-sky-900 hover:rounded-2xl">
+            <div class="h-full px-3 py-1 my-2 hover:cursor-pointer hover:bg-cyan-900 hover:rounded-2xl">
                 <a href="#about">About</a>
             </div>
-            <div class="h-full px-3 py-1 my-2 hover:cursor-pointer hover:bg-sky-900 hover:rounded-2xl">
+            <div class="h-full px-3 py-1 my-2 hover:cursor-pointer hover:bg-cyan-900 hover:rounded-2xl">
                 <a href="#problem">Problem</a>
             </div>
-            <div class="h-full px-3 py-1 my-2 hover:cursor-pointer hover:bg-sky-900 hover:rounded-2xl">
+            <div class="h-full px-3 py-1 my-2 hover:cursor-pointer hover:bg-cyan-900 hover:rounded-2xl">
                 <a href="#solution">Solution</a>
             </div>
         </nav>

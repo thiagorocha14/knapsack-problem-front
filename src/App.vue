@@ -4,12 +4,14 @@
         <img ref="background" class="h-full z-0 fixed w-full brightness-75 object-cover object-center" src="./assets/img/background.png" alt="bg">
         <HomePage class="z-10"/>
         <AboutPage class="z-10"/>
+        <ProblemPage class="z-10"/>
     </main>
 </template>
 <script setup lang="ts">
     import Header from './components/Header.vue';
     import AboutPage from './pages/AboutPage.vue';
     import HomePage from './pages/HomePage.vue';
+    import ProblemPage from './pages/ProblemPage.vue';
     import { ref, onMounted, onUnmounted } from "vue";
 
     const background = ref(null) as any;
