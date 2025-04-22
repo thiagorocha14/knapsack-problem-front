@@ -4,25 +4,25 @@
         <h2 class="text-2xl font-bold mb-4">Product Details</h2>
         <div class="mb-3">
             <label for="value" class="block text-sm font-medium text-gray-700">Value</label>
-            <input v-model="product.value" id="value" type="number" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+            <input v-model="product.value" id="value" type="number" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm sm:text-sm" />
         </div>
         <div class="mb-3">
             <label for="weight" class="block text-sm font-medium text-gray-700">Weight</label>
-            <input v-model="product.weight" id="weight" type="number" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+            <input v-model="product.weight" id="weight" type="number" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm sm:text-sm" />
         </div>
         <div>
             <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity</label>
-            <input v-model="product.quantity" id="quantity" type="number" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" />
+            <input v-model="product.quantity" id="quantity" type="number" class="mt-1 block w-full p-2 rounded-md border-gray-300 shadow-sm sm:text-sm" />
         </div>
     </div>
 </template>
 <script setup lang="ts">
 import { ref, PropType } from 'vue';
-import { ProductType } from '../types/ProductType';
+import { Product } from '../types/ProductType';
 
 const props = defineProps({
     product: {
-        type: Object as PropType<ProductType>,
+        type: Object as PropType<Product>,
         required: true
     }
 });
