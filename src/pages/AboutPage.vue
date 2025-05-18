@@ -1,7 +1,7 @@
 <template>
     <main id="about">
         <div class="flex items-center justify-start h-screen w-full pt-16">
-            <div class="h-full w-full p-5 bg-cyan-950 bg-opacity-95 text-white" ref="about">
+            <div class="h-full w-full p-5 bg-neutral-950 text-white" ref="about">
                 <section class="ml-2" ref="textAbout" id="textAbout">
                     <header class="flex flex-row items-center justify h-16">
                         <h1 class="text-4xl font-bold w-3/6">What is the Knapsack Problem?</h1>
@@ -14,18 +14,19 @@
                         It is a combinatorial problem that models a scenario where you have a limited capacity knapsack (or bag) and a set of items,
                         each with a certain value and weight. The goal is to determine the optimal subset of items to include in the knapsack so
                         that the total value is maximized without exceeding the capacity.</p>
+
                     <p class="text-xl mt-5 text-justify">
                         The problem can be formally defined as follows:
                         Given a set of products, and each product has a weight, value and quantity, and you have a knapsack with a maximum weight capacity,
                         the objective is to select a subset of products such that the total weight does not exceed the capacity and the total value is maximized.
                         The Knapsack Problem can be divided into different variations, including:
-                        <ul class="list-disc ml-10 mt-5">
-                            <li class="text-xl">0/1 Knapsack Problem: Each item can either be included or excluded from the knapsack.</li>
-                            <li class="text-xl">Fractional Knapsack Problem: Items can be broken into smaller parts, allowing for fractional inclusion.</li>
-                            <li class="text-xl">Bounded Knapsack Problem: Each item has a limited quantity that can be included in the knapsack.</li>
-                            <li class="text-xl">Unbounded Knapsack Problem: There is no limit on the number of times an item can be included in the kna psack.</li>
-                        </ul>
                     </p>
+                    <ul class="list-disc ml-10 mt-5">
+                        <li class="text-xl">0/1 Knapsack Problem: Each item can either be included or excluded from the knapsack.</li>
+                        <li class="text-xl">Fractional Knapsack Problem: Items can be broken into smaller parts, allowing for fractional inclusion.</li>
+                        <li class="text-xl">Bounded Knapsack Problem: Each item has a limited quantity that can be included in the knapsack.</li>
+                        <li class="text-xl">Unbounded Knapsack Problem: There is no limit on the number of times an item can be included in the knapsack.</li>
+                    </ul>
                     <p class="text-xl mt-5 text-justify">
                         This web application focuses on the Bounded Knapsack Problem, where each item has a limited quantity that can be included in the knapsack.
                         Allowing you to create your own products and add them to the list of products, You can costumize the weight,
@@ -71,8 +72,15 @@ const textAbout = ref(null) as any;
 
 const handleScroll = () => {
     let scrollValue = window.scrollY;
-    const left = -100 + (scrollValue * 0.084);
+    let left = -13 + (scrollValue * 0.013);
+    if (scrollValue > getHeightOfScreen()) {
+        left = 0;
+    }
     textAbout.value.style.left = `${left}%`;
+}
+
+const getHeightOfScreen = () => {
+    return window.innerHeight;
 }
 
 onMounted(() => {

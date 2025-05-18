@@ -1,7 +1,7 @@
 type ProductType = {
-    value: number;
-    weight: number;
+    price: number;
     quantity: number;
+    weight: number;
 }
 
 export type Product = ProductType;
